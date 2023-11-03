@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Menu from "../components/Menu"
 import Feed from "../pages/Feed"
-import Profile from "../pages/Profile"
+import Profile from "../pages/Profile/Profile"
+// import Profile from "../pages/Profile"
 import PostDetail from "../pages/PostDetail"
 import Login from "../pages/Login"
 
@@ -12,8 +13,8 @@ function App() {
       <Routes>
         <Route element={<Menu/>}>
           <Route path="/" element={<Feed />}></Route>
-          <Route path="post/:id" element={<PostDetail />}></Route>
           <Route path="profile" element={<Profile />}></Route>
+          <Route path="post/:id" element={<PostDetail />}></Route>
         </Route>
         <Route path="login" element={<Login />}></Route>
       </Routes>
