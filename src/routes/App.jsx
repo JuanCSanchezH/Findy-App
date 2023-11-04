@@ -4,20 +4,57 @@ import Feed from "../pages/Feed"
 import Profile from "../pages/Profile"
 import PostDetail from "../pages/PostDetail"
 import Login from "../pages/Login"
+import Register from "../pages/Register"
+import { createContext, useEffect, useReducer } from "react"
+import userLoggedReducer, { userLoggedInitial } from '../reducers/userLoggedReducer';
+import useSessionStorage from "../hooks/useStorage"
+import PrivatedRoutes from "./privateRouter"
+import PublicRoutes from "./publicRouter"
+
+export const AppContext = createContext({});
 
 function App() {
+  
+  const [userLogged, userLoggedDispatch] = useReducer(userLoggedReducer, userLoggedInitial);
+  const { storagedData } = useSessionStorage('user');
+
+  useEffect(() => {
+    if (!userLogged.user && storagedData) {
+      userLoggedDispatch({
+        type: 'LOGIN',
+        payload: {
+          isAuthenticated: true,
+          user: storagedData
+        }
+      })
+    }
+  }, [userLogged, storagedData])
+
+  const globalStates = {
+    userLogged: { userLogged, userLoggedDispatch }
+  }
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Menu/>}>
-          <Route path="/" element={<Feed />}></Route>
-          <Route path="post/:id" element={<PostDetail />}></Route>
-          <Route path="profile" element={<Profile />}></Route>
-        </Route>
-        <Route path="login" element={<Login />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <AppContext.Provider value={globalStates}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/'>
+            <Route element={<PrivatedRoutes isAuthenticate={userLogged.isAuthenticated} />}>
+              <Route element={<Menu/>}>
+                <Route index element={<Feed />} />
+                <Route path='feed' element={<Feed />} />
+                <Route path="profile" element={<Profile/>}></Route>
+                <Route path="post/:id" element={<PostDetail/>}></Route>
+              </Route>
+            </Route>
+            <Route element={<PublicRoutes isAuthenticate={userLogged.isAuthenticated} />}>
+              <Route path='login' element={<Login />} />
+              <Route path='register' element={<Register />} />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AppContext.Provider>
   )
 }
 
