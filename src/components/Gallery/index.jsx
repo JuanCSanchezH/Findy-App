@@ -1,83 +1,101 @@
-import React from "react";
-import { Box, ChakraProvider } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { useParams } from "react-router-dom";
-import {formToJSON} from 'axios';
-import { Card, CardHeader, CardBody, CardFooter, Image, HStack , Button} from '@chakra-ui/react'
 
-function ImagesGallery({size, source}){
-  return <Image
-    boxSize={size}
-    objectFit="cover"
-    src={source}
-    />
-}
+import useUserPosts from '../../Hooks/useUserPost';
 
-const Gallery = ({children}, {items}) =>{
-  const [filteritems, filtersetItems] = useState([]);
-  const [filter, setFilter] = useState('post');
 
-  useEffect(() => {
-    switch (filter) {
-      case 'photos':
-        filtersetItems(items.filter((item) => item.type === 'photos'));        
-        break;
-      case 'videos':
-        filtersetItems(items.filter((item) => item.type === 'videos'));
-        break;
-      case 'tags':
-        filtersetItems(items.filter((item) => item.type === 'tags'));
-        break;    
-      default:
-        filtersetItems(items);
-        break;
-    }
-  },[filter,items]);
 
+
+const Gallery = () => {
+  const [selectedCategory, setSelectedCategory, filteredPosts] = useUserPosts(
+    'Fotos',
+    1
+  );
   return (
-    <ChakraProvider>
-      <Card>
-        <CardHeader>
-          <HStack 
-            spacing="24px"
-            align="center"
-          >
-            <Button onClick={() => setFilter('photos')} >
-              Photos
-            </Button>
-            <Button onClick={() => setFilter('videos')} >
-              Videos
-            </Button>
-            <Button onClick={() => setFilter('tags')} >
-              Tags
-            </Button>
-            <Button onClick={() => setFilter('videos')} >
-              Videos
-            </Button>
-          </HStack>
-        </CardHeader>
-        <CardBody>
-          <HStack 
-            spacing="24px"
-            align="center"
-          >
-            {filteritems.map((item) => (
-              <ImagesGallery
-                key={item.id}
-                size="150px"
-                source={item.source}
-              />
-            ))}
-          </HStack>
-        </CardBody>
-      </Card>
-    </ChakraProvider>
-  )
-}
+    <section className="Gallery__container">
+      <nav className="Gallery_navbar">
+        <button
+          onClick={() => setSelectedCategory('Foto')}
+          className="Gallery_navbar--section"
+        >
+          Photos
+        </button>
+        <button
+          onClick={() => setSelectedCategory('Video')}
+          className="Gallery_navbar--section"
+        >
+          Videos
+        </button>
+        <button
+          onClick={() => setSelectedCategory('Album')}
+          className="Gallery_navbar--section"
+        >
+          Album
+        </button>
+        <button
+          onClick={() => setSelectedCategory('Tag')}
+          className="Gallery_navbar--section"
+        >
+          Tags
+        </button>
+      </nav>
+      <div className="Gallery__container_cards">
+        {filteredPosts ? (
+          filteredPosts.map((post) => (
+            <div key={post.postId}>
+              {post.tipo === 'foto' && (
+                <img src={post.archivo} alt={`Post ${post.postId}`} />
+              )}
+              {post.tipo === 'video' && (
+                <div>
+                  <p>Video:</p>
+                  <iframe
+                    title={`Post ${post.postId}`}
+                    width="560"
+                    height="315"
+                    src={post.archivo}
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              )}
+              {post.tipo === 'album' && (
+                <div>
+                  <p>Album:</p>
+                  <iframe
+                    title={`Post ${post.postId}`}
+                    width="560"
+                    height="315"
+                    src={post.archivo}
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              )}
+              {post.tipo === 'tag' && (
+                <div>
+                  <p>Tag:</p>
+                  <iframe
+                    title={`Post ${post.postId}`}
+                    width="560"
+                    height="315"
+                    src={post.archivo}
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              )}
+            </div>
+          ))
+        ) : (
+          <p>No se encontraron posts de esta categoría para este usuario.</p>
+        )}
+      </div>
 
-Gallery.propTypes = {
-  children: PropTypes.array
-}
+      {/* {userData && (
+        <div className="Gallery__container_cards">
+          {userData.posts.map((post)=>(
+          <img key={post.postId} src={post.archivo} alt={`Post ${post.postId}`} />
+          ))}
+          </div>
+      )} */}
+    </section>
+  );
+};
+export default Gallery;
 
-export default Gallery

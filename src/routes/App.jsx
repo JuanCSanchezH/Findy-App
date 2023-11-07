@@ -11,8 +11,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+
         <Route element={<Menu/>}>
           <Route path="/" element={<Feed />}></Route>
+
           <Route path="profile" element={<Profile />}></Route>
           <Route path="post/:id" element={<PostDetail />}></Route>
         </Route>

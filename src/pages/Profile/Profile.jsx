@@ -12,7 +12,10 @@ import { AuthContext } from '../../context/AuthContext';
 
 const Profile = () => {
   return (
-    <div>Profile</div>
+    <>
+    <Gallery/>
+    <Card/>
+    </>
   )
 }
 

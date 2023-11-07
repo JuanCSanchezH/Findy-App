@@ -7,8 +7,6 @@ import Gallery from './components/Gallery/index.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ChakraProvider>
-    <Gallery/>
-    <Profile />
     <App />
   </ChakraProvider>,
 )
