@@ -7,6 +7,7 @@ import { getUserByEmailAndPassword } from '../services/userServices';
 import { Link } from 'react-router-dom';
 import useSessionStorage from '../hooks/useStorage';
 import Swal from 'sweetalert2';
+import '../SASS/styleLogin/login.scss'
 
 function Login() {
   
@@ -73,9 +74,9 @@ function Login() {
   return (
     <>
       <main>
-        <form onSubmit={handleLogin}>
+        <form className='form-container' onSubmit={handleLogin}>
           <div className="container-form">
-              <figure><img src="https://res.cloudinary.com/ddsed1j6u/image/upload/v1698629336/pngtree-travel-flight-logo-world-globe-vector-image_331555_b7ygpk.jpg"/></figure>
+              {/* <figure><img src="https://res.cloudinary.com/ddsed1j6u/image/upload/v1698629336/pngtree-travel-flight-logo-world-globe-vector-image_331555_b7ygpk.jpg"/></figure> */}
               <h2 className='login-title'>Sign In</h2>
               <div>
                   <h6>Email</h6>
@@ -86,7 +87,7 @@ function Login() {
                           name="email"
                           onChange={(e) => onChangeFunctions(e)}
                           value={formik.values.email}
-                          placeholder='Input email'
+                          placeholder='Enter your email'
                       />
                   </div>
                   {formik.errors.email ? <span className='error-span'>{formik.errors.email}</span> : ''}
@@ -99,13 +100,15 @@ function Login() {
                           name="password"
                           onChange={(e) => onChangeFunctions(e)}
                           value={formik.values.password}
-                          placeholder='Input password'
+                          placeholder='Enter your password'
                       />
                   </div>
                   {formik.errors.password ? <span className='error-span'>{formik.errors.password}</span> : ''}
               </div>
-              <button type='submit'>Submit</button>
-              <span>Don't you have an account? <Link to={'/register'}>Register</Link></span>
+              <div className="button">
+                <button type='submit'>Enter</button>
+              </div>
+              <div className='link'>Don't you have an account? <Link className='link-2' to={'/register'}>Register</Link></div>
           </div>
         </form>
       </main>

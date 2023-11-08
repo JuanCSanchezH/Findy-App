@@ -1,0 +1,50 @@
+.menu-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image-button-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .button-container {
+        left: 25px;
+    }
+
+    .button-container-2 {
+        right: 25px;
+    }
+
+    .button-container,
+    .button-container-2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        img {
+            width: 27px;
+        }
+        button {
+            margin: 0 18px;
+        }
+    }
+} 
+
+.circle {
+    background-color: #ff7674;
+    border-radius: 32px;
+    height: 64px;
+    width: 64px;
+    position: absolute;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    .img-suma {
+        width: 30px;
+        cursor: pointer;
+    }
+}
+  
