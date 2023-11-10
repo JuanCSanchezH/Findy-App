@@ -26,5 +26,3 @@ const useUserPosts = (userId) => {
 };
 
 export default useUserPosts;
-
-export default useUserPosts;
