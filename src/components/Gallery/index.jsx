@@ -1,37 +1,31 @@
-
 import useUserPosts from '../../Hooks/useUserPost';
-
-
-
+import './main.scss'
 
 const Gallery = () => {
-  const [selectedCategory, setSelectedCategory, filteredPosts] = useUserPosts(
-    'Fotos',
-    1
-  );
+  const { filteredPosts, userData, filterCategory } = useUserPosts(3);
   return (
     <section className="Gallery__container">
       <nav className="Gallery_navbar">
         <button
-          onClick={() => setSelectedCategory('Foto')}
+          onClick={() => filterCategory('Foto')}
           className="Gallery_navbar--section"
         >
           Photos
         </button>
         <button
-          onClick={() => setSelectedCategory('Video')}
+          onClick={() => filterCategory('Video')}
           className="Gallery_navbar--section"
         >
           Videos
         </button>
         <button
-          onClick={() => setSelectedCategory('Album')}
+          onClick={() => filterCategory('Album')}
           className="Gallery_navbar--section"
         >
           Album
         </button>
         <button
-          onClick={() => setSelectedCategory('Tag')}
+          onClick={() => filterCategory('Tag')}
           className="Gallery_navbar--section"
         >
           Tags
@@ -86,16 +80,7 @@ const Gallery = () => {
           <p>No se encontraron posts de esta categoría para este usuario.</p>
         )}
       </div>
-
-      {/* {userData && (
-        <div className="Gallery__container_cards">
-          {userData.posts.map((post)=>(
-          <img key={post.postId} src={post.archivo} alt={`Post ${post.postId}`} />
-          ))}
-          </div>
-      )} */}
     </section>
   );
 };
 export default Gallery;
-

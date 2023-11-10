@@ -1,33 +1,30 @@
 import { useState, useEffect } from 'react';
-import getPost from '../services/postsServices';
+import {getPost} from '../services/postsServices'
 
-// Hook personalizado para gestionar los posts y su filtrado
-const useUserPosts = (initialCategory,id) => {
+const useUserPosts = (userId) => {
   const [userData, setUserData] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
-
+  const [filteredPosts, setFilteredPosts] = useState([]);
+  
   useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        // Obtener los datos del usuario y sus posts
-        const response = await getPost(id);
-        setUserData(response);
-      } catch (error) {
-        console.error(error);
-      }
-    };
 
-    fetchUserData();
-  }, );
+    getPost(userId).then((response)=>{
+      setUserData(response);
+      console.log(response);
+    });
+  }, [userId]);
 
-  // Filtrar los posts según la categoría seleccionada
-  const filteredPosts = userData?.posts.filter(post => post.tipo.toLowerCase() === selectedCategory.toLowerCase());
+  const filterCategory = (initialCategory) =>{
+    const filterPost = userData?.posts.filter(post => post.tipo.toLowerCase()==initialCategory.toLowerCase());
+    setFilteredPosts(filterPost);
+  } 
 
   return {
-    selectedCategory,
-    setSelectedCategory,
     filteredPosts,
+    userData,
+    filterCategory,
   };
 };
+
+export default useUserPosts;
 
 export default useUserPosts;
