@@ -24,12 +24,6 @@ function Login() {
       email: Yup.string().min(4, 'Must be at least 4 characters').email('You should use an email format').required('Required field'),
       password: Yup.string().required('Required field')
     }),
-    // onSubmit: () => {
-    //   handleLogin();
-    // },
-    // onChange: (e) => {
-    //   handleChangeInputs(e);
-    // },
     enableReinitialize: true
   });
 
@@ -38,7 +32,6 @@ function Login() {
 
     if (dataForm.email.trim() && dataForm.password.trim()) {
       const user = await getUserByEmailAndPassword(dataForm.email, dataForm.password);
-      console.log(user);
       if (user) {
         Swal.fire(
           'Excelente!',

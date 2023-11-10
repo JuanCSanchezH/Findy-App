@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../routes/App";
 
 const useForm = (initalValue = {}) => {
 
     const [dataForm, setDataForm] = useState(initalValue);
 
-    const handleChangeInputs = (event) => {
+    const handleChangeComentInput = (event) => {
         const { name, value, files, type } = event.target;
         setDataForm({
             ...dataForm,
@@ -19,4 +20,21 @@ const useForm = (initalValue = {}) => {
     return { dataForm, handleChangeInputs, reset }
 }
 
-export default useForm;
+export default useForm
+
+export const useComentForm = (initalValue = {}) => {
+
+    const [commentForm, setcomentForm] = useState(initalValue);
+    const { userLogged } = useContext(AppContext);
+    
+    const handleChangeComentInput = (event) => {
+        const { name, value} = event.target;
+        setcomentForm({
+            ...commentForm,
+            userId: userLogged.userLogged.user.id,
+            [name]: value
+        });
+    }
+
+    return { commentForm, handleChangeComentInput}
+}

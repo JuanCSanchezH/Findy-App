@@ -5,7 +5,6 @@ import { Link, Outlet } from 'react-router-dom'
 const Menu = () => {
   return (
     <div>
-      <h1>Acá debería mostrarse la interfaz del menú</h1>
       <Outlet />
       <button><Link to='/feed'>To feed</Link></button>
       <br/>
