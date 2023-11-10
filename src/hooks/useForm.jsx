@@ -5,7 +5,7 @@ const useForm = (initalValue = {}) => {
 
     const [dataForm, setDataForm] = useState(initalValue);
 
-    const handleChangeComentInput = (event) => {
+    const handleChangeInputs = (event) => {
         const { name, value, files, type } = event.target;
         setDataForm({
             ...dataForm,
