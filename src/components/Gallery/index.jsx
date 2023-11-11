@@ -1,31 +1,32 @@
-import useUserPosts from "../../Hooks/useUserPost";
-import "./main.scss";
+import useUserPosts from '../../Hooks/useUserPost';
+import PropTypes from 'prop-types';
+import './main.scss'
 
-const Gallery = () => {
-  const { filteredPosts, userData, filterCategory } = useUserPosts(3);
+const Gallery = ({userId = 1}) => {
+  const { filteredPosts, userData, filterCategory } = useUserPosts(userId);
   return (
     <section className="Gallery__container">
       <nav className="Gallery_navbar">
         <button
-          onClick={() => filterCategory("Foto")}
+          onClick={() => filterCategory('Foto')}
           className="Gallery_navbar--section"
         >
           Photos
         </button>
         <button
-          onClick={() => filterCategory("Video")}
+          onClick={() => filterCategory('Video')}
           className="Gallery_navbar--section"
         >
           Videos
         </button>
         <button
-          onClick={() => filterCategory("Album")}
+          onClick={() => filterCategory('Album')}
           className="Gallery_navbar--section"
         >
           Album
         </button>
         <button
-          onClick={() => filterCategory("Tag")}
+          onClick={() => filterCategory('Tag')}
           className="Gallery_navbar--section"
         >
           Tags
@@ -35,10 +36,10 @@ const Gallery = () => {
         {filteredPosts ? (
           filteredPosts.map((post) => (
             <div key={post.postId}>
-              {post.tipo === "foto" && (
+              {post.tipo === 'foto' && (
                 <img src={post.archivo} alt={`Post ${post.postId}`} />
               )}
-              {post.tipo === "video" && (
+              {post.tipo === 'video' && (
                 <div>
                   <p>Video:</p>
                   <iframe
@@ -50,7 +51,7 @@ const Gallery = () => {
                   ></iframe>
                 </div>
               )}
-              {post.tipo === "album" && (
+              {post.tipo === 'album' && (
                 <div>
                   <p>Album:</p>
                   <iframe
@@ -62,7 +63,7 @@ const Gallery = () => {
                   ></iframe>
                 </div>
               )}
-              {post.tipo === "tag" && (
+              {post.tipo === 'tag' && (
                 <div>
                   <p>Tag:</p>
                   <iframe
@@ -83,4 +84,9 @@ const Gallery = () => {
     </section>
   );
 };
+
+Gallery.propTypes = {
+  userId: PropTypes.number,
+};
+
 export default Gallery;

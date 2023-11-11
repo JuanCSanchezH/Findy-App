@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {getPost} from '../services/postsServices'
+import {getPost} from '../services/postsService'
 
 const useUserPosts = (userId) => {
   const [userData, setUserData] = useState(null);
