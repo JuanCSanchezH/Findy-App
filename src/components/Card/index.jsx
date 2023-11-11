@@ -15,18 +15,27 @@ const Card = ({userId}) => {
       });
 
   })
+  function getNumberLikes (userData){
+    let likes = 0;
+    userData.posts.forEach(post => {
+      likes += post.likes;
+    });
+    return likes;
+  }
+
+  const likes = getNumberLikes(userData);
   return (
     <div className="card__container">
       <nav className="card__nav">
         <div className="card__nav__followers">
-          <span>10.7M</span>
+          <span>{userData.seguidores.length}M</span>
           <span>Followers</span>
         </div>
         <div className="card__nav__profile">
           <img src={userData.avatar} alt="profile" />
         </div>
         <div className="card__nav__likes">
-          <span>108.3M</span>
+          <span>{likes}M</span>
           <span>Likes</span>
         </div>
       </nav>
