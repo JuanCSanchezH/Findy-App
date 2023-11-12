@@ -1,0 +1,120 @@
+.post-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    &__hr{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 32px;
+    }
+    &__fig{img{border-radius: 0 0 30px 30px; width: 100%;}}
+    &__indicators{
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        width: 65%;
+        border-radius: 20px;
+        background-color: #FFFFFF;
+        margin-top: -34px;
+        margin-bottom: 16px;
+        
+        &__info{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 45%;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            p{
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 700;
+                text-align: start;
+                width: min-content;
+            }
+            figure{
+                width: 48px;
+                height: 48px;
+            }
+        }
+        &__reactions{
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            width: 40%;
+            padding-top: 14px;
+            padding-bottom: 8px;
+            p{
+                margin-top: -5px;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+            }
+            .heart-btn{
+                background-image: url('https://res.cloudinary.com/ddsed1j6u/image/upload/v1699304667/Vectorheart_qves6y.png');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                height: 16px;
+                width: 16px;
+            }
+            .heart-btn.active{
+                background-image: url('https://res.cloudinary.com/ddsed1j6u/image/upload/v1699304667/Vectorredheart_s1vh3g.png');
+            }
+        }
+    }
+    &__description{
+        text-align: justify;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        margin-inline: 16px;
+        margin-bottom: 16px;
+    }
+    &__footer{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 16px;
+        figure{
+            img{
+                width: 100%;
+                height: 32px;
+            }
+        }
+        form{width: 100%;}
+        div{
+            position: relative;
+            width: 100%;
+            input{
+                width: 100%;
+                height: 40px;
+                border-radius: 20px;
+                padding-left: 15px;
+                padding-right: 50px;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                &::placeholder{
+                    font-size: 12px;
+                }
+            }
+            button{
+                position: absolute;
+                display: flex;
+                right: 20px;
+                top: 10px;
+            }
+        }
+        
+    }
+    background: radial-gradient(50% 50% at 90% 70%, rgba(255, 116, 183, 0.30) 0%, rgba(255, 188, 116, 0.00) 100%),
+                radial-gradient(70% 70% at 0% 60%, rgba(255, 188, 116, 0.30) 0%, rgba(255, 188, 116, 0.00) 100%);
+}

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../routes/App";
 
 const useForm = (initalValue = {}) => {
 
@@ -19,4 +20,21 @@ const useForm = (initalValue = {}) => {
     return { dataForm, handleChangeInputs, reset }
 }
 
-export default useForm;
+export default useForm
+
+export const useComentForm = (initalValue = {}) => {
+
+    const [commentForm, setcomentForm] = useState(initalValue);
+    const { userLogged } = useContext(AppContext);
+    
+    const handleChangeComentInput = (event) => {
+        const { name, value} = event.target;
+        setcomentForm({
+            ...commentForm,
+            userId: userLogged.userLogged.user.id,
+            [name]: value
+        });
+    }
+
+    return { commentForm, handleChangeComentInput}
+}

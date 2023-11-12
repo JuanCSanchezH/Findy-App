@@ -22,7 +22,7 @@ const Menu = () => {
   }; */
 
   return (
-    <>
+    <div>
       <Outlet />
       <div className="menu-container">
         <div className='circle'>
@@ -65,7 +65,7 @@ const Menu = () => {
         </div>
       </div>
 
-    </>
+    </div>
   )
 }
 
