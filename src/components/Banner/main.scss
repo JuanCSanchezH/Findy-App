@@ -1,0 +1,34 @@
+.banner{
+  &__container{
+    //border: 1px solid red;
+    border-radius:35px 35px 0 0;
+    padding: 15px;
+    height: 198px;
+    //width: 428px;
+  }
+  &__nav{
+    & span{
+      font-size: 17px;
+      font-weight: 500;
+      color: black;
+    }
+    display: flex;
+    justify-content: space-between;
+    &-status{
+     // border: 1px solid black;
+      display: flex;
+      &-icon{
+        margin: 3px;
+      }
+    }
+  }
+  &__actions{
+    //border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &--button{
+      background-color: transparent;
+    }
+  }
+}
