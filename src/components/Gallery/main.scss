@@ -23,6 +23,14 @@
       &::-webkit-scrollbar{
         display: none;
       }
+      &-post{
+        object-fit: cover;
+        object-position: top;
+        &::-webkit-scrollbar{
+          display: none;
+        }
+        
+      }
       & img{
         height: 210px;
         width: 178px;

@@ -13,11 +13,11 @@ const Gallery = ({userId = 1}) => {
       case 'album':
       case 'tag':
         return (
-          <div>
-            <p>Video:</p>
+          <div className='Gallery__container_cards-post'>
+            <p>{post.tipo.toUpperCase()}:</p>
             <iframe
               title={`Post ${post.postId}`}
-              width="560"
+              width="420"
               height="315"
               src={post.archivo}
               allowFullScreen
