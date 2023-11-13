@@ -1,4 +1,4 @@
-import useUserPosts from '../../Hooks/useUserPost';
+import useUserPosts from '../../hooks/useUserPosts';
 import PropTypes from 'prop-types';
 import './main.scss'
 

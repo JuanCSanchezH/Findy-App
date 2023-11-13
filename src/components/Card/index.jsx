@@ -1,7 +1,7 @@
 import "./main.scss";
 import PropTypes from 'prop-types';
 import { useState,useEffect } from "react";
-import { getPost } from "../../services/postsServices";
+import { getPost } from '../../services/postServices.js';
 
 const Card = ({userId}) => {
   const [userData, setUserData] = useState({});

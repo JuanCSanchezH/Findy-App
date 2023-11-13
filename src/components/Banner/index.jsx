@@ -4,7 +4,7 @@ import { MdWifi } from 'react-icons/md';
 import { CiBatteryFull } from 'react-icons/ci';
 import { AiOutlineLeft } from 'react-icons/ai';
 import { BsThreeDots } from 'react-icons/bs';
-import { getPost } from '../../services/postsServices';
+import { getPost } from '../../services/postServices.js';
 
 
 import './main.scss';

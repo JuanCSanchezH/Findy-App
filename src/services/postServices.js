@@ -10,6 +10,14 @@ export const getPostById = async (id) => {
         return null;
     }
 }
+export const getPost =async (id ='') =>{
+    try{
+      const { data } = await axios.get(`${endpoints.users}/${id}`);
+      return data;
+    }catch(error){
+      console.error(error);
+    }
+  }
 
 export const createAPost = async (newPost) => {
     try {
