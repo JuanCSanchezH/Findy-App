@@ -6,17 +6,20 @@ import Card from "../../components/Card/index.jsx";
 import useSessionStorage from "../../hooks/useStorage.jsx";
 
 
+
 const Profile = () => {
+  const { storagedData } = useSessionStorage('user');
+  const userId = storagedData ? storagedData.id : null;
   return (
     <div className="profile__container">
       <div className="Banner">
-        <Banner userId={1} />
+        <Banner userId={userId} />
       </div>
       <div className="Card">
-        <Card userId={1} />
+        <Card userId={userId} />
       </div>
       <div className="Gallery">
-        <Gallery userId={1} />
+        <Gallery userId={userId} />
       </div>
     </div>
   );
