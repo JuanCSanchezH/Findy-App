@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 .banner{
   &__container{
     //border: 1px solid red;
@@ -6,6 +7,7 @@
     border-radius:35px 35px 0 0;
     padding: 15px;
     height: 198px;
+    font-family: 'Poppins', sans-serif;
     //width: 428px;
   }
   &__nav{
