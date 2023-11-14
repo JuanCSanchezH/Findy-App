@@ -10,12 +10,14 @@ import userLoggedReducer, { userLoggedInitial } from '../reducers/userLoggedRedu
 import useSessionStorage from "../hooks/useStorage"
 import PrivatedRoutes from "./privateRouter"
 import PublicRoutes from "./publicRouter"
+import postsReducer, {postsInitial} from "../reducers/postsReducer"
 
 export const AppContext = createContext({});
 
 function App() {
   
   const [userLogged, userLoggedDispatch] = useReducer(userLoggedReducer, userLoggedInitial);
+  const [posts, postsDispatch] = useReducer(postsReducer, postsInitial);
   const { storagedData } = useSessionStorage('user');
 
   useEffect(() => {
@@ -31,7 +33,8 @@ function App() {
   }, [userLogged, storagedData])
 
   const globalStates = {
-    userLogged: { userLogged, userLoggedDispatch }
+    userLogged: { userLogged, userLoggedDispatch },
+    posts: {posts, postsDispatch}
   }
 
   return (

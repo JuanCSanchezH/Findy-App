@@ -11,21 +11,22 @@
 // export default Feed
 
 import React, { useContext, useEffect, useState } from 'react';
-import { AppContext } from './Login';
+import { AppContext } from '../routes/App';
 import Card from '../components/card/card';
 import './Feed';
+import { getPosts } from '../services/postServices';
 
 
 const Home = () => {
-  const { accommodations } = useContext(AppContext);
-  const { accommodationsDispatch } = accommodations;
-  const { accommodationList, filteredAccommodation, activeFilter } = accommodations.accommodations;
+  const { posts } = useContext(AppContext);
+  const { postsDispatch } = posts;
+  const { postsList} = posts.posts;
 
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    getAccommodationsWihtCategories().then((response) => {
-      accommodationsDispatch({
+    getPosts().then((response) => {
+      postsDispatch({
         type: 'FILL',
         payload: response
       })
@@ -33,31 +34,44 @@ const Home = () => {
   }, [])
 
 
-
   return (
     <main className='home'>
-      <button onClick={() => setShowForm(!showForm)}>Comentarios</button>
-      {
-        showForm?<div>Este es un formulario</div>:<></>
-      }
-      <Filterbutton />
-      {
-        activeFilter ? (
+     <header className='header-container'>
+      <img src="https://res.cloudinary.com/dpc1vrbek/image/upload/v1699754232/LOGOLOGO_3_qckln1.png" alt="" />
+      <img className='heart' src="https://res.cloudinary.com/dpc1vrbek/image/upload/v1699755594/Vector_1_enuzcb.png" alt="" />
+     <img className='message' src="https://res.cloudinary.com/dpc1vrbek/image/upload/v1699755594/Vector_2_dnymtk.png" alt="" />
+     </header>
+       <section className='stories-users'>
+        <div>
+        <img src="https://res.cloudinary.com/dpc1vrbek/image/upload/v1699919078/Ellipse_1_z5ozz2.png" alt="" />
+        <img className='mas-icon' src="https://res.cloudinary.com/dpc1vrbek/image/upload/v1699919078/Vector_3_af9az0.png" alt="" />
+        <h4>Your Story</h4>
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/dpc1vrbek/image/upload/v1699921871/Group_2_1_so1el9.png" alt="" />
+          <h4>Jennie Kim</h4>
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/dpc1vrbek/image/upload/v1699921871/Group_3_e91iy3.png" alt="" />
+          <h4>Roseanne Park</h4>
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/dpc1vrbek/image/upload/v1699921871/Group_1_yvenqb.png" alt="" />
+          <h4>kim Ji-soo</h4>
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/dpc1vrbek/image/upload/v1699921871/Group_4_n9cm8e.png" alt="" />
+          <h4>Lalisa Manoban</h4>
+        </div>
+       </section>
           <section className='home__cards'>
             {
-              filteredAccommodation.length ? filteredAccommodation.map(item => <Card key={item.id} accommodation={item} />) : <div>No hay resultado para esta búsqueda</div>
-            }
-          </section>
-        ) : (
-          <section className='home__cards'>
-            {
-              accommodationList.length ? (
-                accommodationList.map(item => <Card key={item.id} accommodation={item} />)
+              postsList.length ? (
+                postsList.map(item => <Card key={item.id} posts={item} />)
               ) : <div>...Cargando</div>
             }
           </section>
-        )
-      }
+        
 
     </main>
   )

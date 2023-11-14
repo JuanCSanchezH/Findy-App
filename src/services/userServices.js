@@ -26,3 +26,14 @@ export const createAnUser = async (newUser) => {
         return null;
     }
 }
+
+export const getAllUsers = async () => {
+    try {
+        const { data } = await axios.get(endpoints.users);
+        return data.length ? data : null;
+
+    } catch (error) {   
+        console.log(error);
+        return null;
+    }
+}
