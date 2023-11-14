@@ -2,6 +2,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    button{
+        background: none;
+        border: none;
+    }
+    figure{
+        margin: 0;
+        img{width: 100%};
+    }
     section{
         display: flex;
         flex-direction: column;
@@ -13,7 +21,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        padding: 32px;
+        button{padding: 32px;}
     }
     &__fig{img{border-radius: 0 0 30px 30px; width: 100%;}}
     &__indicators{
@@ -23,7 +31,7 @@
         width: 65%;
         border-radius: 20px;
         background-color: #FFFFFF;
-        margin-top: -34px;
+        margin-top: -43px;
         margin-bottom: 16px;
         
         &__info{
@@ -43,6 +51,8 @@
             figure{
                 width: 48px;
                 height: 48px;
+                margin: 0;
+                img{width: 100%};
             }
         }
         &__reactions{
@@ -65,9 +75,7 @@
                 height: 16px;
                 width: 16px;
             }
-            .heart-btn.active{
-                background-image: url('https://res.cloudinary.com/ddsed1j6u/image/upload/v1699304667/Vectorredheart_s1vh3g.png');
-            }
+            .heart-btn.active{background-image: url('https://res.cloudinary.com/ddsed1j6u/image/upload/v1699304667/Vectorredheart_s1vh3g.png');}
         }
     }
     &__description{
@@ -94,11 +102,12 @@
             position: relative;
             width: 100%;
             input{
-                width: 100%;
+                width: 80%;
                 height: 40px;
                 border-radius: 20px;
-                padding-left: 15px;
-                padding-right: 50px;
+                padding-left: 15px !important;
+                padding-right: 50px !important;
+                padding: 0;
                 font-size: 12px;
                 font-style: normal;
                 font-weight: 400;

@@ -14,7 +14,6 @@ const PostDetail = () => {
   const [user, setUser] = useState({});
   const { userLogged } = useContext(AppContext);
   const [isLiked, setIsLiked] = useState(false);
-  // const {comment, setComment} = useState({});
   const {commentForm, handleChangeComentInput} = useComentForm();
   
   useEffect(()=>{
