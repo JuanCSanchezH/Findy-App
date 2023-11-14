@@ -6,10 +6,20 @@ import { getPost } from "../../services/postServices.js";
 const Card = ({ userId }) => {
   const [userData, setUserData] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [followersCount, setFollowersCount] = useState(userData.seguidores ? userData.seguidores.length:0);
 
   const handleProfileClick = () => {
     setIsModalOpen(!isModalOpen);
   };
+  const handleFollowClick = () => {
+    setIsFollowing(!isFollowing);
+    if (isFollowing) {
+      setFollowersCount(followersCount - 1);
+    } else {
+      setFollowersCount(followersCount + 1);
+    }
+  }
 
   useEffect(() => {
     getPost(userId)
@@ -61,7 +71,11 @@ const Card = ({ userId }) => {
         </span>
       </section>
       <div className="card__buttons__container">
-        <button className="card__buttons">Follow</button>
+        <button 
+        className="card__buttons"
+        onClick={handleFollowClick}>
+          {isFollowing ? 'Unfollow' : 'Follow'}
+          </button>
         <button className="card__buttons">Messages</button>
       </div>
       {isModalOpen && (
