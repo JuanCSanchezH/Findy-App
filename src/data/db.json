@@ -1,0 +1,224 @@
+[
+    {
+      "id": 1,
+      "nombre": "Alberto Salazar",
+      "correo": "as@gmail.com",
+      "contrasena": "123",
+      "avatar": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237659/FyndyApp/1/gqcvz2fxabvirpko5ipw.png",
+      "descripcion": "Hola, soy Alberto",
+      "seguidores": [
+        {
+          "seguidorId": 2,
+          "nombre": "Sandra Aguilar"
+        }
+      ],
+      "seguidos": [
+        {
+          "seguidoId": 3,
+          "nombre": "Ana López"
+        }
+      ],
+      "posts": [
+        {
+          "postId": 1,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237659/FyndyApp/1/grsbixr11qh6vewyp01t.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 2,
+              "texto": "¡Genial!"
+            }
+          ]
+        },
+        {
+          "postId": 2,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237659/FyndyApp/1/hnz9gshmc05wsatpaolv.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 2,
+              "texto": "¡Genial!"
+            }
+          ]
+        },
+        {
+          "postId": 3,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237659/FyndyApp/1/icxakx2dg2i47tiyh4kb.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 2,
+              "texto": "¡Genial!"
+            }
+          ]
+        },
+        {
+          "postId": 4,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237659/FyndyApp/1/k1wubed14ed5kf7afotp.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 2,
+              "texto": "¡Genial!"
+            }
+          ]
+        },
+        {
+          "postId": 5,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237659/FyndyApp/1/y4dm6sibplwrbntj9n4s.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 2,
+              "texto": "¡Genial!"
+            }
+          ]
+        },
+        {
+          "postId": 6,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237659/FyndyApp/1/sssndwuc0jnt2cc08vke.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 2,
+              "texto": "¡Genial!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Sandra Aguilar",
+      "correo": "sa@gmail.com",
+      "contrasena": "321",
+      "avatar": "",
+      "descripcion": "Hola, soy Sandra",
+      "seguidores": [
+        {
+          "seguidorId": 3,
+          "nombre": "Ana López"
+        }
+      ],
+      "seguidos": [
+        {
+          "seguidoId": 1,
+          "nombre": "Alberto Salazar"
+        }
+      ],
+      "posts": [
+        {
+          "postId": 1,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237709/FyndyApp/2/d3vmw32vzt1b4jfcrens.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 2,
+              "texto": "¡Genial!"
+            }
+          ]
+        },
+        {
+          "postId": 2,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237709/FyndyApp/2/ysazswokfilecifzwaj2.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 2,
+              "texto": "¡Genial!"
+            }
+          ]
+        },
+        {
+          "postId": 3,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237709/FyndyApp/2/widjk0yicldsl7cezjyz.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 2,
+              "texto": "¡Genial!"
+            }
+          ]
+        },
+        {
+          "postId": 4,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237709/FyndyApp/2/ap2pkcq2zw031vg3zszr.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 1,
+              "texto": "¡Genial!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Ana López",
+      "correo": "al@gmail.com",
+      "contrasena": "1234",
+      "avatar": "",
+      "descripcion": "Hola, soy Ana",
+      "seguidores": [
+        {
+          "seguidorId": 1,
+          "nombre": "Alberto Salazar"
+        }
+      ],
+      "seguidos": [
+        {
+          "seguidoId": 2,
+          "nombre": "Sandra Aguilar"
+        }
+      ],
+      "posts": [
+        {
+          "postId": 1,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237740/FyndyApp/3/ftzmcjutlcyvopgeivwj.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 1,
+              "texto": "¡Genial!"
+            }
+          ]
+        },
+        {
+          "postId": 2,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237740/FyndyApp/3/inhkunxz5e8vw0yj05ec.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 1,
+              "texto": "¡Genial!"
+            }
+          ]
+        },
+        {
+          "postId": 3,
+          "tipo": "foto",
+          "archivo": "https://res.cloudinary.com/dsgfgsjud/image/upload/v1699237740/FyndyApp/3/uolkhrmehpf9eszbn2c8.jpg",
+          "likes": 0,
+          "comentarios": [
+            {
+              "userId": 1,
+              "texto": "¡Genial!"
+            }
+          ]
+        }
+      ]
+    }
+  ]

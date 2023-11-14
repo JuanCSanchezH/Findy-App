@@ -1,0 +1,120 @@
+.home {
+    background: #F8F8F8;
+    padding: 10px 10px;
+
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    
+
+    img {
+     width: 190px;
+    height: 36px;
+    }
+
+    .heart {
+    width: 27.119px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-left: 50px;
+    } 
+    .message {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    }
+}
+.header-post {
+    display: flex;
+    gap: 8px;
+    margin: 10px 10px 10px 10px;
+   
+
+}
+
+.mas-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    color: rgb(18, 18, 18);
+}
+
+
+.avatar-button {
+    width: 30px;
+}
+
+.stories-users {
+    display: flex;
+    gap: 15px;
+    h4 {
+       font-family: Balsamiq Sans;
+        font-size: 12px;;
+    }
+}
+.reactions{
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    width: 40%;
+    padding-top: 14px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    p{
+        margin-top: -5px;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+    }
+    .heart-btn{
+        background-image: url('https://res.cloudinary.com/ddsed1j6u/image/upload/v1699304667/Vectorheart_qves6y.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 16px;
+        width: 16px;
+    }
+    .heart-btn.active{
+        background-image: url('https://res.cloudinary.com/ddsed1j6u/image/upload/v1699304667/Vectorredheart_s1vh3g.png');
+    }
+}
+.guardar-post {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    
+}
+
+.card {
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 7px;
+    .reactions-icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+.img-posts {
+   width: auto;
+   padding: 8px 8px;
+   img {
+    border-radius: 10px;
+    width: 370px;
+    max-height: 300px;
+   }
+}
+#description-container{
+    padding-left: 13px;
+  b {
+    padding-right: 10px;
+  }
+}
+

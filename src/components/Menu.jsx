@@ -24,6 +24,7 @@ const Menu = () => {
   return (
     <div>
       <Outlet />
+      <button><Link to='/post/1'>To post details</Link></button>
       <div className="menu-container">
         <div className='circle'>
           <button className='new-post'  /* onClick={openModal} */>
